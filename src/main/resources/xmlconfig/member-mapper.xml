@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+    <resultMap id="memberResultMap" type="ken.section01.xmlconfig.Member">
+        <id property="memberCode" column="member_code"/>
+        <result property="firstname" column="member_firstname"/>
+        <result property="lastname" column="member_lastname"/>
+        <result property="email" column="member_email"/>
+        <result property="username" column="member_username"/>
+        <result property="password" column="member_password"/>
+        <result property="rate" column="member_rate"/>
+        <result property="posts" column="member_posts"/>
+        <result property="reviews" column="member_review"/>
+    </resultMap>
+
+
+    <select id="viewAllMembers" resultMap="memberResultMap">
+        select
+            *
+        from
+            tbl_member
+    </select>
+
+
+
+</mapper>
