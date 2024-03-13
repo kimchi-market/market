@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Email Verification</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,20 +15,18 @@
             align-items: center;
             height: 100vh;
         }
-        .signup-form {
+        .verification-form {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
         }
-        .signup-form h2 {
+        .verification-form h2 {
             margin-bottom: 20px;
             text-align: center;
         }
-        .signup-form input[type="text"],
-        .signup-form input[type="email"],
-        .signup-form input[type="password"] {
+        .verification-form input[type="text"] {
             width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 15px;
@@ -36,7 +34,7 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-        .signup-form button {
+        .verification-form button {
             width: 100%;
             padding: 10px;
             border: none;
@@ -46,20 +44,17 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .signup-form button:hover {
+        .verification-form button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-<div class="signup-form">
-    <h2>회원가입</h2>
-    <form action="/verification" method="post">
-        <input type="text" name="firstname" placeholder="First name" required>
-        <input type="text" name="lastname" placeholder="last name" required>
-        <input type="email" name="email" placeholder="example@wisc.edu" required>
-        <input type="password" name="password" placeholder="password" required>
-        <button type="submit">sign up</a></button>
+<div class="verification-form">
+    <h2>Email Verification</h2>
+    <form action="/verify-email" method="post">
+        <input type="text" name="verificationCode" placeholder="Enter Verification Code" required>
+        <button type="submit">Verify Email</button>
     </form>
 </div>
 </body>
